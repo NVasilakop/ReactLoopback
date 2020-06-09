@@ -15,18 +15,26 @@
     "Created_at": {
       "type": "date"
     },
-    "Birth_date":{
-      "type":"date"
+    "Birth_date": {
+      "type": "date"
     },
     "Age": {
       "type": "number"
     },
-    "History":{
-      "type": ["object"]
+    "History": {
+      "type": [
+        "object"
+      ]
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    }
+  },
   "acls": [],
   "methods": {}
 }
