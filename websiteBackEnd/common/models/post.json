@@ -21,17 +21,30 @@
   },
   "validations": [],
   "relations": {
-    "user":{
+    "user": {
       "type": "belongsTo",
       "model": "user",
       "foreignKey": "userId"
     },
-    "Profile":{
-      "type":"belongsTo",
+    "Profile": {
+      "type": "belongsTo",
       "model": "Profile",
       "foreignKey": "profileId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }
